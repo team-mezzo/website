@@ -22,7 +22,7 @@ guard 'livereload' do
   watch(%r{(app|vendor)(/assets/\w+/(.+\.(css|js|html|png|jpg))).*}) { |m| "/assets/#{m[3]}" }
 end
 
-guard :rspec, :cmd => "--drb" do
+guard :rspec, :all_on_start => true, :cmd => "--drb" do
   watch(%r{^spec/.+_spec\.rb$})
   watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }
   watch('spec/spec_helper.rb')  { "spec" }
