@@ -11,12 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140626015537) do
+ActiveRecord::Schema.define(version: 20140705050853) do
 
   create_table "donations", force: true do |t|
-    t.string   "description"
+    t.text     "description",       limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "organization"
+    t.datetime "pickup_time_start"
+    t.datetime "pickup_time_end"
+    t.integer  "raw_amount"
+    t.integer  "prepared_amount"
   end
 
 end

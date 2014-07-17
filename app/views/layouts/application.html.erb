@@ -7,14 +7,31 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<!-- top navbar -->
+	<header>
+		<!-- logo -->
+		<%= link_to image_tag('logo.png'), donations_path, id: "logo" %>
+		<!-- navigation -->
+		<nav>
+			<ul>
+				<li><%= link_to "Donations", donations_path %></li>
+				<li><%= link_to "Messages" , '#' %></li>
+				<li><%= link_to "Log In"  , '#' %></li>
+			</ul>
+		</nav>
+	</header>
 
-	<% flash.each do |name, message| %>
-		<div id="flash_<%= name %>"> 
-			<%= message %>
-		</div>
-	<% end %>
+	<!-- body -->
+	<div class="container">
+		<!-- flash notice -->
+		<% flash.each do |name, message| %>
+			<div id="flash_<%= name %>"> 
+				<%= message %>
+			</div>
+		<% end %>
+	</div>
 
-<%= yield %>
+	<%= yield %>
 
 </body>
 </html>

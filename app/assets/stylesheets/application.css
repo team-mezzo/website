@@ -11,3 +11,57 @@
  *= require_self
  *= require_tree .
  */
+
+/* ==================================
+============== GENERAL ==============
+===================================== */
+/* general links - no underline */
+a {
+	text-decoration: none;
+}
+
+/* ==================================
+=========== NAVBAR HEADER ===========
+===================================== */
+
+header {
+	float: left;
+	width: 100%;
+	margin: 0 0 30px 0;
+	background: #514B4C;
+}
+
+header a#logo img {
+	max-width: 80px;
+	margin: 10px 0px 10px 7%;
+}
+
+/* nav links container */
+nav {
+	float: right;
+	text-align: right;
+	padding: 10px 0;
+	margin-right: 7%;
+	margin-top: 10px;
+	font-size: 1.3em;
+}
+
+/* unordered list of nav links */
+nav ul {
+	list-style: none;
+}
+
+/* individual nav link list items */
+nav li {
+	display: inline-block;
+}
+
+/* individual nav link styling */
+nav a {
+	color: #FFF6CB;
+	padding: 10px; /* more space to mouse over */
+	margin: 0px 10px;
+}
+nav a.selected, nav a:hover {
+	color: #ACCF5E;
+}

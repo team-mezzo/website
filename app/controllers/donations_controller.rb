@@ -5,11 +5,15 @@ class DonationsController < ApplicationController
 		@donations = Donation.all
 	end
 
+	def new
+		@donation = Donation.new
+	end
+
 	def create
 		# render :text => params.inspect
 
-		Donation.create(params.require(:donation).permit(:description))
-		redirect_to :back
+		Donation.create(permitted_params(params))
+		redirect_to donations_path
 	end
 
 	def edit
@@ -20,7 +24,7 @@ class DonationsController < ApplicationController
 		@donation = Donation.find(params[:id])
 
 		# if update successful
-		if (@donation.update_attributes(params.require(:donation).permit(:description)))
+		if (@donation.update_attributes(permitted_params(params)))
 			redirect_to donations_path, :notice => 'Your donation has successfully been updated.'
 		else
 			redirect_to :back, :notice => 'There was an error updating your donation.'
@@ -34,6 +38,6 @@ class DonationsController < ApplicationController
 
 	private 
 		def permitted_params(params)
-			params.require(:donation).permit(:description)
+			params.require(:donation).permit(:description, :organization, :pickup_start_time, :pickup_end_time)
 		end
 end

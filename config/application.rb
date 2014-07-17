@@ -30,5 +30,6 @@ module Mezzo
 	    g.view_specs      false
 	    g.helper_specs    false
 	end
+
   end
 end

@@ -1,5 +1,6 @@
 Mezzo::Application.routes.draw do
 
+  get "static_pages/home"
 	root :to => 'donations#index'
   resources :donations
 

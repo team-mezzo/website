@@ -1,5 +1,17 @@
 <%= form_for @donation do |f| %>
 	<%= f.label :description %>
-	<%= f.text_field :description %>
+	<%= f.text_area :description %>
+	<br />
+
+	<%= f.label :organization %>
+	<%= f.text_field :organization %>
+	<br />
+
+	Pickup Time - Start: <%= datetime_select :donation, :pickup_time_start %>
+	<br />
+
+	Pickup Time - End: <%= datetime_select :donation, :pickup_time_end %>
+	<br />
+
 	<%= f.submit %>
 <% end %>

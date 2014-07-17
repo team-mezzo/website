@@ -1,6 +1,6 @@
 <h1> Donations </h1>
 
-<%= render 'form' %>
+<%= button_to 'New Donation', new_donation_path, :method => 'get' %>
 
 <ul>
 	<% for donation in @donations %>
