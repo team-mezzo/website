@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140705050853) do
+ActiveRecord::Schema.define(version: 20140917221953) do
 
   create_table "donations", force: true do |t|
     t.text     "description",       limit: 255
@@ -23,5 +23,16 @@ ActiveRecord::Schema.define(version: 20140705050853) do
     t.integer  "raw_amount"
     t.integer  "prepared_amount"
   end
+
+  create_table "vendor_users", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "password_digest"
+  end
+
+  add_index "vendor_users", ["email"], name: "index_vendor_users_on_email", unique: true
 
 end
